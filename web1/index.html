@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Alumni Network & Job Board</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ram css desgins */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        section {
+            padding: 40px;
+        }
+
+        section h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+
+        .job-listing {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-listing h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .job-listing p {
+            font-size: 16px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>College Alumni Network</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#mentorship">Mentorship</a></li>
+            <li><a href="#job-board">Job Board</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h2>Welcome to our Alumni Network & Job Board</h2>
+        <p>Connect with alumni, find mentors, and explore job opportunities.</p>
+    </section>
+    <section id="mentorship">
+        <h2>Mentorship Program</h2>
+        <p>Discover experienced alumni willing to mentor current students.</p>
+        <!-- Add mentorship contents-->
+    </section>
+    <section id="job-board">
+        <h2>Job Board</h2>
+        <p>Explore job listings for recent graduates.</p>
+        <div id="job-listings"></div> <!--  job listings  -->
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <!-- Add contacts -->
+    </section>
+    <footer>
+        <p>&copy; 2023 College Alumni Network</p>
+    </footer>
+
+
+    <script>
+
+        const jobListings = [
+            {
+                title: "Software Developer",
+                company: "TechCorp Inc.",
+                location: "New York",
+                description: "We are looking for a talented software developer...",
+            },
+            {
+                title: "Marketing Manager",
+                company: "MarketingPro",
+                location: "Los Angeles",
+                description: "Join our marketing team and lead campaigns...",
+            },
+
+        ];
+
+
+        function displayJobListings() {
+            const jobListingsContainer = document.getElementById("job-listings");
+
+
+            jobListingsContainer.innerHTML = "";
+
+
+            jobListings.forEach((job, index) => {
+                const jobListingElement = document.createElement("div");
+                jobListingElement.classList.add("job-listing");
+
+                jobListingElement.innerHTML = `
+                <h3>${job.title}</h3>
+                <p><strong>Company:</strong> ${job.company}</p>
+                <p><strong>Location:</strong> ${job.location}</p>
+                <p>${job.description}</p>
+            `;
+
+                jobListingsContainer.appendChild(jobListingElement);
+            });
+        }
+
+
+        window.addEventListener("load", displayJobListings);
+    </script>
+</body>
+
+</html>
